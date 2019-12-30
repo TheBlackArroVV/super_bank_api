@@ -1,11 +1,12 @@
 require 'roda'
+require 'fast_jsonapi'
 
 class App < Roda
+  plugin :hash_routes
+
+  Unreloader.require('routes') {}
+
   route do |r|
-    r.root do
-      render json: "Hello World!"
-    end
+    r.hash_routes('')
   end
 end
-
-run App.freeze.app
