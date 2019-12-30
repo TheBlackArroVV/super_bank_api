@@ -8,6 +8,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
     concurrent-ruby (1.1.5)
+    dotenv (2.7.5)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     i18n (1.7.0)
@@ -20,6 +21,7 @@ GEM
     rack-unreloader (1.7.0)
     roda (3.25.0)
       rack
+    sequel (5.27.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -29,10 +31,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   fast_jsonapi
   puma
   rack-unreloader
   roda
+  sequel
 
 BUNDLED WITH
    1.17.3
