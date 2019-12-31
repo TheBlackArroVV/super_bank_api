@@ -1,11 +1,13 @@
 require 'sequel'
+require 'singleton'
+require 'dotenv/load'
 
 class Database
-  include Singelton
+  include Singleton
 
   attr_reader :db
 
   def initialize
-    @db = Sequel.connect(DATABASE_URL)
+    @db = Sequel.connect(ENV['DATABASE_URL'])
   end
 end
