@@ -1,24 +1,18 @@
+require_relative '../db/database'
+
 class MoneyEvent
-  def self.<<(event)
-    all_events << event
-  end
-
   def self.all_events
-    @all_events ||= []
-  end
-
-  def self.count
-    res = 0
-    all_events.each do |event|
-      res += event.amount
-    end
-    res
+    Database.instance.events.where(type: type)
   end
 
   def initialize(amount:, currency:)
     @amount = amount
     @currency = currency
-    self.class << self
+    Database.instance.events.insert(amount: amount, currency: currency, type: type)
+  end
+
+  def type
+    self.class.to_s
   end
 
   attr_reader :amount

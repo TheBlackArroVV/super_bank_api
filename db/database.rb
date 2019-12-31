@@ -10,4 +10,8 @@ class Database
   def initialize
     @db = Sequel.connect(ENV['DATABASE_URL'])
   end
+
+  def events
+    db[:events]
+  end
 end
