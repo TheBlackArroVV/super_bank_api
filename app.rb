@@ -3,9 +3,8 @@
 require 'roda'
 require 'fast_jsonapi'
 require_relative 'events/money_event'
-require_relative 'events/debit'
-require_relative 'events/credit'
-require_relative 'validators/money_event'
+Dir[File.join(__dir__, 'events', '*.rb')].each { |file| require file }
+Dir[File.join(__dir__, 'validators', '*.rb')].each { |file| require file }
 
 class App < Roda
   plugin :hash_routes
