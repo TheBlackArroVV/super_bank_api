@@ -10,12 +10,19 @@ class MoneyEvent
   def initialize(amount:, currency:)
     @amount = amount
     @currency = currency
-    Database.instance.events.insert(amount: amount, currency: currency, type: type)
   end
 
   def type
     self.class.to_s
   end
 
-  attr_reader :amount
+  def valid?
+    ::Validators::MoneyEvent.new(amount: amount, currency: currency).validate!
+  end
+
+  def save_to_db
+    Database.instance.events.insert(amount: amount, currency: currency, type: type)
+  end
+
+  attr_reader :amount, :currency
 end
