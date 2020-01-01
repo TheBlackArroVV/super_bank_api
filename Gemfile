@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 
 gem 'dotenv'
 gem 'fast_jsonapi'
+gem 'pg'
 gem 'puma'
 gem 'rack-unreloader'
 gem 'roda'
