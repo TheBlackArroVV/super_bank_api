@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class App
   hash_branch 'events' do |r|
     r.on 'debit' do
@@ -20,7 +18,7 @@ class App
     r.on 'credit' do
       r.post do
         credit_event = Credit.new(amount: request.params['amount'],
-                                currency: request.params['currency'])
+                                  currency: request.params['currency'])
 
         if credit_event.valid?
           credit_event.save_to_db

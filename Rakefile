@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 namespace :db do
   desc 'Run migrations'
   task :migrate, [:version] do |_t, args|

@@ -1,7 +1,3 @@
-# frozen_string_literal: true
-
-require_relative '../db/database'
-
 class MoneyEvent
   def self.all_events
     Database.instance.events.where(type: type)
