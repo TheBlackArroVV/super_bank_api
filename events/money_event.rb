@@ -3,6 +3,10 @@ class MoneyEvent
     Database.instance.events.where(type: type)
   end
 
+  def self.type
+    self.to_s
+  end
+
   def initialize(amount:, currency:)
     @amount = amount
     @currency = currency

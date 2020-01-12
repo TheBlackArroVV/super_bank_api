@@ -29,5 +29,11 @@ class App
         end
       end
     end
+
+    r.on 'count' do
+      r.get do
+        { result: Balance.new.current }.to_json
+      end
+    end
   end
 end
