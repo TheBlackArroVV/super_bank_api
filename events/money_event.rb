@@ -9,7 +9,7 @@ class MoneyEvent
 
   def initialize(amount:, currency:)
     @amount = amount
-    @currency = currency
+    @currency = currency.downcase
   end
 
   def type
