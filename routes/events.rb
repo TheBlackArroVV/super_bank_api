@@ -32,7 +32,7 @@ class App
 
     r.on 'count' do
       r.get do
-        { result: Balance.new.current }.to_json
+        Balance.new.count.to_json
       end
     end
   end
