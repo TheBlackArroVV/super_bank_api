@@ -14,4 +14,8 @@ class Database
   def events
     db[:events]
   end
+
+  def categories
+    db[:categories]
+  end
 end

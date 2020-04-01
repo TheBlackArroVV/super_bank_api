@@ -4,7 +4,7 @@ class MoneyEvent
   end
 
   def self.type
-    self.to_s
+    to_s
   end
 
   def initialize(amount:, currency:)
