@@ -8,10 +8,10 @@ Unreloader.require('app.rb') { 'App' }
 run(dev ? Unreloader : App.freeze.app)
 
 use Rack::Cors do
-    allow do
-      origins '*'
-      resource '*',
-        headers: :any,
-        methods: [:get, :post, :delete, :put, :patch, :options, :head]
-    end
+  allow do
+    origins '*'
+    resource '*',
+             headers: :any,
+             methods: %i[get post delete put patch options head]
   end
+end

@@ -7,15 +7,20 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    coderay (1.1.2)
     concurrent-ruby (1.1.5)
     dotenv (2.7.5)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
+    method_source (1.0.0)
     minitest (5.13.0)
     nio4r (2.5.2)
-    pg (1.2.0)
+    pg (0.21.0)
+    pry (0.13.0)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     puma (4.3.1)
       nio4r (~> 2.0)
     rack (2.0.7)
@@ -37,7 +42,8 @@ PLATFORMS
 DEPENDENCIES
   dotenv
   fast_jsonapi
-  pg
+  pg (>= 0.18, < 1.0)
+  pry
   puma
   rack-cors
   rack-unreloader

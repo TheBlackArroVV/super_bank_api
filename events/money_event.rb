@@ -4,12 +4,13 @@ class MoneyEvent
   end
 
   def self.type
-    self.to_s
+    to_s
   end
 
-  def initialize(amount:, currency:)
+  def initialize(amount:, currency:, category_id:)
     @amount = amount
     @currency = currency.downcase
+    @category_id = category_id
   end
 
   def type
@@ -21,8 +22,13 @@ class MoneyEvent
   end
 
   def save_to_db
-    Database.instance.events.insert(amount: amount, currency: currency, type: type)
+    Database.instance.events.insert(
+      amount: amount,
+      currency: currency,
+      type: type,
+      category_id: category_id
+    )
   end
 
-  attr_reader :amount, :currency
+  attr_reader :amount, :currency, :category_id
 end
