@@ -7,7 +7,7 @@ class Category
 
   def valid?
     return false if name.nil? || name.empty?
-    return false if Database.instance.categories.map {|el| el[:name]}.include?(name)
+    return false if Database.instance.categories.map { |el| el[:name] }.include?(name)
 
     true
   end
